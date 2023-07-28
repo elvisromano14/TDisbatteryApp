@@ -29,8 +29,9 @@ $(document).ready(function () {
         },
         success:function(respuesta){
           var resp = jQuery.parseJSON(respuesta); 
+          console.log("resp", resp);
           for(var i = 0; i < resp.length; i++){   
-            table2.row.add([resp[i]["lote"],resp[i]["almacen"],resp[i]["stock_lote"],resp[i]["fecha_lote"]]);
+            table2.row.add([resp[i]["lote"],resp[i]["descripcion"],resp[i]["stock"],resp[i]["fecha_inicio"],resp[i]["fecha_vence"]]);
             table2.draw();
           }
         }
@@ -97,4 +98,8 @@ $('#datatable6 tbody').on('click', 'tr', function () {
         }
       });
   }
+});
+$(".tablas").on("click", ".btnImprimirVenta", function(){
+  var codigoVenta = $(this).attr("codigoVenta");
+  window.open("fpdf/t-ventas.php?codigo="+codigoVenta, "_blank");
 });

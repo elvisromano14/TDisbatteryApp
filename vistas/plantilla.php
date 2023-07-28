@@ -26,7 +26,7 @@ session_start();
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2973766580778258" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="vistas/deskapp/src/plugins/sweetalert2/sweetalert2.css" />
   </head>
-  <body class="sidebar-light header-white">
+  <body class="sidebar-light header-white sidebar-shrink">
     <?php
       if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok"){
         // include "modulos/preloader.php"; 

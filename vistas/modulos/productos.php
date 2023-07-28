@@ -23,7 +23,7 @@
 			<div class="col-md-7 col-sm-12">
 				<div class="card-box mb-30">
 					<div class="pb-20">
-						<table id="datatable" class="table hover data-table-export table-bordered">
+						<table id="datatable" class="table hover table-bordered">
 							<thead>
 								<tr>
                   <th>Codigo</th>
@@ -105,12 +105,13 @@
               <div class="form-group row">
                 <label class="control-label col-md-2 col-sm-2 ">Lotes</label>
                 <div class="col-md-9 col-sm-10">
-                  <table id="datatable4" class="table hover data-table-export table-bordered">
+                  <table id="datatable4" class="table hover table-bordered">
                     <thead>
                       <th>Lotes</th>
                       <th>Almacen</th>
                       <th>Stock</th>
-                      <th>Fecha</th>
+                      <th>Fecha Inicio</th>
+                      <th>Fecha Vence</th>
                     </thead>
                     <tbody id="nuevosLotes">
                     </tbody>
