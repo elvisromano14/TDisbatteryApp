@@ -52,11 +52,11 @@ $('#datatable4 tbody').on('click', 'tr', function () {
     var codigo = $("#dataCodigo").val();
     var lote = data[0];
     var almacen = data[1];
-    var stock = data[2];
-    var fecha = data[3];
+    var fechai = data[3];
+    var fechav = data[4];
     var descripcion = $("#dataDescripcion").val();
     var qrcodeContainer = $("#qrcode");
-    new QRCode(qrcodeContainer[0],codigo+';'+descripcion+';'+lote+';'+almacen+';'+fecha);
+    new QRCode(qrcodeContainer[0],codigo+';'+almacen+';'+lote+';'+fechai+';'+fechav);
   }
 });
 $('#datatable6 tbody').on('click', 'tr', function () {     
@@ -82,7 +82,6 @@ $('#datatable6 tbody').on('click', 'tr', function () {
         },
         success:function(respuesta){
           var resp = jQuery.parseJSON(respuesta);
-          console.log("resp", resp);
           $("#visualCodigo").val(resp["codigo"]);
           $("#visualLote").val(resp["lote"]);
           $("#visualDescripcion").val(resp["descripcion"]);
@@ -92,14 +91,13 @@ $('#datatable6 tbody').on('click', 'tr', function () {
           $("#visualUmbral").val(resp["umbral"]);
           $("#visualTipo").val(resp["tipo"]);
           var qrcodeContainer = $("#qrcode2");
-          new QRCode(qrcodeContainer[0],resp["codigo"]+';'+resp["descripcion"]+';'+resp["lote"]+';'+resp["almacen"]+';'+resp["fecha_lote"]);
+          new QRCode(qrcodeContainer[0],resp["codigo"]+';'+resp["descripcion"]+';'+resp["lote"]+';'+resp["fecha_inicio"]+';'+resp["fecha_vence"]);
           $(".visualizarProductos").modal("show");
 
         }
       });
   }
 });
-$(".tablas").on("click", ".btnImprimirVenta", function(){
-  var codigoVenta = $(this).attr("codigoVenta");
-  window.open("fpdf/t-ventas.php?codigo="+codigoVenta, "_blank");
+$(document).on('click', '.btnImprimirProductos', function() {
+  window.open("TCPDF/productos.php");
 });

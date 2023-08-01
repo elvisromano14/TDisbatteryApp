@@ -17,6 +17,11 @@
 						</ol>
 					</nav>
 				</div>
+        <div class="col-md-6 col-sm-12 text-right">
+          <div class="title">
+            <button type="button" class="btn btn-info btnImprimirProductos"><i class="icon-copy fa fa-print" aria-hidden="true"></i> Imprimir</button>
+          </div>
+        </div>
 			</div>
 		</div>
 		<div class="row">

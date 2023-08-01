@@ -31,6 +31,12 @@ class ModeloProductos{
 		$stmt -> execute();
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
+	static public function mdlMostrarProductosQR(){
+		$stmt = Conexion::conectar()->prepare("SELECT A.codigo,A.lote,A.stock,B.descripcion,A.fecha_inicio,A.fecha_vence,
+A.codigo || A.lote || A.stock || B.descripcion || A.fecha_inicio || A.fecha_vence AS qrcode FROM articulosxlotes AS A LEFT OUTER JOIN almacen AS B ON A.cod_almacen=B.cod_almacen ORDER BY A.codigo");
+		$stmt -> execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
 	static public function mdlMostrarProductosXLote($tabla){
 		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
 		$stmt -> execute();
